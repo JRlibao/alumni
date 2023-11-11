@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.css')?>">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="container">
+<table class= "table table-bordered">
+        <thead >
+            <tr  >
+                <th >
+                Last Name
+                </th>
+                <th >
+                   First Name 
+                </th>
+                <th >
+                   Gender
+                </th>
+                <th>
+                   Contact
+                </th>
+                <th>
+                    Email
+                </th>
+                <th >
+                   Degree
+                </th>
+                <th >
+                  Batch
+                </th>
+                <th >
+                 Job
+                </th>
+                <th >
+                 Job Description
+                </th>
+                <th >
+                 Companys address
+                </th>
+                <th >
+                <a href="<?= site_url('alumni/add') ?>">CREATE</a>
+                </th>
+
+            
+            </tr>
+        </thead>
+
+        <tbody>
+            <?php foreach($alumni as $alumni) : ?>
+            <tr >
+                <td>
+                   <?= $alumni-> Lastname ?>
+                </td>
+                <td>
+                <?= $alumni-> Firstname ?>
+                </td>
+                <td>
+                <?= $alumni-> gender ?>
+                </td>
+                <td>
+                <?= $alumni-> contact ?>
+                </td>
+                <td>
+                <?= $alumni-> email ?>
+                </td>
+                <td>
+                <?= $alumni-> degree ?>
+                </td>
+                <td>
+                <?= $alumni-> batch ?>
+                </td>
+                <td>
+                <?= $alumni-> job?>
+                </td>
+                <td>
+                <?= $alumni-> jobDescription ?>
+                </td>
+                <td>
+                <?= $alumni-> company_address ?>
+                </td>
+                <td>
+                <a href="<?= site_url('alumni/show/' . $alumni->id)?>"><button>Edit</button></a> | <a href="<?= site_url('alumni/delete/' . $alumni->id)?>"><button>Delete</button></a>
+                </td>
+                
+                
+            </tr>
+            <?php endforeach ?>
+
+
+       </tbody>
+    </table>
+
+    </div>
+</body>
+</html>
